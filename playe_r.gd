@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-class_name PlayerCharacter
-
 @export var yes = 1
 const speed_multipler = 0
 const max_speed = 300
