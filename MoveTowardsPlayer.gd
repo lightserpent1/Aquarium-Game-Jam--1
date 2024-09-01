@@ -1,10 +1,15 @@
 extends CharacterBody2D
 
-class_name Enemy 
+export var speed = 100
+var player_position
+var target_position
+onready var player = get_parent().get_node("Player")
 
-var health: float = 100.0
-var speed: float = 200.0
-var target: Player
+func _physics_process(delta):
 
-func _physics_process(delta: float) -> void:
-	if
+    player_position = player_position
+    target_position = (player_position - poisition).normalized()
+
+    if position.distance_to(player_position) > 3:
+        move_and_slide(target_position * speed)
+        look_at(player_position)

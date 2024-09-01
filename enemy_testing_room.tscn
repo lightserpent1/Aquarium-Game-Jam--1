@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dileyjh1ssydv"]
+
+[ext_resource type="Script" path="res://playe_r.gd" id="1_5eksn"]
+[ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_su788"]
+[ext_resource type="Texture2D" uid="uid://dxmij2rpeiql" path="res://enemyart/enemyspider.png" id="3_02gvj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bk7ie"]
+size = Vector2(128, 127)
+
+[node name="EnemyTestingRoom" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(334, 136)
+script = ExtResource("1_5eksn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(167, 80)
+texture = ExtResource("2_su788")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(167, 79.5)
+shape = SubResource("RectangleShape2D_bk7ie")
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+position = Vector2(607, 303)
+texture = ExtResource("3_02gvj")
