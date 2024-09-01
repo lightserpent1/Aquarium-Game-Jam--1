@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
-export var speed = 100
-var player_position
-var target_position
-onready var player = get_parent().get_node("Player")
 
-func _physics_process(delta):
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@export var target_to_chase: CharacterBody2D
 
-    player_position = player_position
-    target_position = (player_position - poisition).normalized()
+const SPEED = 300
 
-    if position.distance_to(player_position) > 3:
-        move_and_slide(target_position * speed)
-        look_at(player_position)
+
+
+func _physics_process(delta: float) -> void:
+	navigation_agent.target_position = target_to_chase.global_position
+	velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
+	move_and_slide()
+

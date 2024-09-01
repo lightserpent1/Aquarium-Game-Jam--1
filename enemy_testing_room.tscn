@@ -1,13 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://dileyjh1ssydv"]
+[gd_scene load_steps=6 format=3 uid="uid://dileyjh1ssydv"]
 
 [ext_resource type="Script" path="res://playe_r.gd" id="1_5eksn"]
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_su788"]
-[ext_resource type="Texture2D" uid="uid://dxmij2rpeiql" path="res://enemyart/enemyspider.png" id="3_02gvj"]
+[ext_resource type="PackedScene" uid="uid://r643b4x1846" path="res://enemy.tscn" id="3_ropfc"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_f5e1q"]
+vertices = PackedVector2Array(966.477, 553.789, 72.7266, 535.188, 58.2813, 23.9609, 992.492, 21.0313)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(48, 14, 1003, 11, 976, 564, 63, 545)])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bk7ie"]
 size = Vector2(128, 127)
 
 [node name="EnemyTestingRoom" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_f5e1q")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(334, 136)
@@ -21,8 +29,6 @@ texture = ExtResource("2_su788")
 position = Vector2(167, 79.5)
 shape = SubResource("RectangleShape2D_bk7ie")
 
-[node name="Enemy" type="CharacterBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-position = Vector2(607, 303)
-texture = ExtResource("3_02gvj")
+[node name="enemy" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("3_ropfc")]
+position = Vector2(303, 311)
+target_to_chase = NodePath("../Player")
