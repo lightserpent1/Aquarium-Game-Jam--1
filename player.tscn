@@ -6,20 +6,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6r42"]
 size = Vector2(128, 127)
 
-[node name="Test World" type="Node2D"]
+[node name="Player" type="Node2D"]
 
-<<<<<<< Updated upstream
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(334, 136)
-=======
-[node name="Player" type="CharacterBody2D" parent="."]
->>>>>>> Stashed changes
 script = ExtResource("1_0agcn")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(167, 80)
 texture = ExtResource("2_mxlmi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(167, 79.5)
 shape = SubResource("RectangleShape2D_t6r42")
