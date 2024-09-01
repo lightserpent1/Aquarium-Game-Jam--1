@@ -2,16 +2,7 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="enemy" parent="." instance=ExtResource("1_1ogwg")]
-position = Vector2(337, 252)
-
-[node name="Playe" type="CharacterBody2D" parent="."]
-script = ExtResource("2_5khyy")
-
-[node name="Sprite2D" type="Sprite2D" parent="Playe"]
-position = Vector2(167, 80)
-texture = ExtResource("3_ehms1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Playe"]
-position = Vector2(167, 79.5)
-shape = SubResource("RectangleShape2D_opmqj")
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+text = "AHH"
