@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://cbpy0vdcxigxu"]
 
 [node name="Node2D" type="Node2D"]
+<<<<<<< Updated upstream
+=======
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_hbys5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_ftqg4")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(457, 239)
+texture = ExtResource("2_2gcjb")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(411, 79)
+>>>>>>> Stashed changes
