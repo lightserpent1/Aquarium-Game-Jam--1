@@ -1,11 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://xrt1jhe8qf4f"]
-
-[ext_resource type="PackedScene" uid="uid://r643b4x1846" path="res://enemy.tscn" id="1_1ogwg"]
-[ext_resource type="Script" path="res://playe_r.gd" id="2_5khyy"]
-[ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="3_ehms1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_opmqj"]
-size = Vector2(128, 127)
+[gd_scene format=3 uid="uid://xrt1jhe8qf4f"]
 
 [node name="Node2D" type="Node2D"]
 
