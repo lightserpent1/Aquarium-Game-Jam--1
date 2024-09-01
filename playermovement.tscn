@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmcmr8fu7x84r"]
-
-[ext_resource type="Script" path="res://playe_r.gd" id="1_y3xfj"]
-
-[node name="Test World" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_y3xfj")

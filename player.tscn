@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmcmr8fu7x84r"]
+[gd_scene load_steps=4 format=3 uid="uid://1t7ll0bemdnw"]
 
 [ext_resource type="Script" path="res://playe_r.gd" id="1_0agcn"]
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_mxlmi"]
@@ -9,6 +9,7 @@ size = Vector2(128, 127)
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(334, 136)
 script = ExtResource("1_0agcn")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
