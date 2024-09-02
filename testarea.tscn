@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2jgi6sd8e8t7"]
+[gd_scene load_steps=11 format=3 uid="uid://dwptxhexdtfqe"]
 
 [ext_resource type="Script" path="res://ranged_enemy.gd" id="1_slqo1"]
 [ext_resource type="Texture2D" uid="uid://b7rkakjsutm0k" path="res://enemyart/rocketenemy.png" id="2_hdp6c"]
