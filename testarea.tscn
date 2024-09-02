@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2jgi6sd8e8t7"]
 
 [ext_resource type="Script" path="res://ranged_enemy.gd" id="1_slqo1"]
-[ext_resource type="Texture2D" uid="uid://dxmij2rpeiql" path="res://enemyart/enemyspider.png" id="2_m7ny3"]
+[ext_resource type="Texture2D" uid="uid://b7rkakjsutm0k" path="res://enemyart/rocketenemy.png" id="2_hdp6c"]
 [ext_resource type="Script" path="res://playe_r.gd" id="3_fgust"]
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="4_05vn8"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6pna0"]
-radius = 1.95533
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ex1r"]
+radius = 280.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4rxs6"]
 vertices = PackedVector2Array(277.023, 322.672, 78.7891, 42.6484, 1102.03, 76.6563, 1103.96, 598.078, 98.2031, 606.844)
@@ -20,17 +20,19 @@ size = Vector2(128, 127)
 
 [node name="RangedEnemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target_to_chase")]
 position = Vector2(537, 394)
+scale = Vector2(0.1, 0.1)
 script = ExtResource("1_slqo1")
 target_to_chase = NodePath("../Player")
 
 [node name="Sprite2D" type="Sprite2D" parent="RangedEnemy"]
-texture = ExtResource("2_m7ny3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RangedEnemy"]
-scale = Vector2(8.28, 10.04)
-shape = SubResource("CircleShape2D_6pna0")
+texture = ExtResource("2_hdp6c")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="RangedEnemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangedEnemy"]
+scale = Vector2(1.80039, -1)
+shape = SubResource("CircleShape2D_0ex1r")
+disabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_4rxs6")
