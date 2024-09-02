@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=7 format=3 uid="uid://diadftjg38d4f"]
-=======
-[gd_scene load_steps=7 format=3 uid="uid://6dvcxqa6noai"]
->>>>>>> Stashed changes
+[gd_scene load_steps=7 format=3 uid="uid://v48qppfwerbd"]
 
 [ext_resource type="Script" path="res://playe_r.gd" id="1_txfcw"]
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_cvv83"]
@@ -24,20 +20,12 @@ position = Vector2(334, 136)
 script = ExtResource("1_txfcw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-<<<<<<< Updated upstream
-position = Vector2(-1.00002, -3.05176e-05)
-=======
 position = Vector2(134, 113)
->>>>>>> Stashed changes
 scale = Vector2(0.484375, 0.484375)
 texture = ExtResource("2_cvv83")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-<<<<<<< Updated upstream
-position = Vector2(0, -1)
-=======
 position = Vector2(134, 113)
->>>>>>> Stashed changes
 shape = SubResource("RectangleShape2D_6eyra")
 
 [node name="Walls" type="StaticBody2D" parent="."]
@@ -58,9 +46,5 @@ shape = SubResource("RectangleShape2D_wlmyd")
 position = Vector2(577, 658)
 shape = SubResource("RectangleShape2D_arac4")
 
-<<<<<<< Updated upstream
-[node name="Spawn_Wall" type="Node2D" parent="."]
-=======
 [node name="Node2D" type="Node2D" parent="."]
->>>>>>> Stashed changes
 script = ExtResource("3_mw6i3")
