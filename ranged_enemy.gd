@@ -17,6 +17,7 @@ func _ready():
 	shoot()
 
 func shoot():
+	
 	var instance = projectile.instantiate()
 	instance.dir = rotation
 	instance.spawnPos = global_position
@@ -36,6 +37,7 @@ func _process(delta):
 
 
 func _physics_process(delta: float) -> void:
+	look_at(target_to_chase.position)
 	navigation_agent.target_position = target_to_chase.global_position
 	velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
 	move_and_slide()
