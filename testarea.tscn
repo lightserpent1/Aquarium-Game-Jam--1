@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2jgi6sd8e8t7"]
+[gd_scene load_steps=11 format=3 uid="uid://d2jgi6sd8e8t7"]
 
 [ext_resource type="Script" path="res://ranged_enemy.gd" id="1_slqo1"]
 [ext_resource type="Texture2D" uid="uid://b7rkakjsutm0k" path="res://enemyart/rocketenemy.png" id="2_hdp6c"]
 [ext_resource type="Script" path="res://playe_r.gd" id="3_fgust"]
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="4_05vn8"]
+[ext_resource type="Script" path="res://random_wall_gen.gd" id="5_d6vdw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ex1r"]
 radius = 61.3491
@@ -15,6 +16,12 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(59, 32, 1112, 67, 1114,
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f13ch"]
 size = Vector2(128, 127)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhxcs"]
+size = Vector2(1172, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vbqx"]
+size = Vector2(18, 667)
 
 [node name="testarea" type="Node2D"]
 
@@ -108,3 +115,28 @@ scale = Vector2(1.80039, -1)
 shape = SubResource("CircleShape2D_0ex1r")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="CharacterBody2D2"]
+
+[node name="Walls" type="StaticBody2D" parent="."]
+position = Vector2(13, 4)
+scale = Vector2(0.98199, 0.983077)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(575, -11)
+shape = SubResource("RectangleShape2D_rhxcs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-9, 324)
+shape = SubResource("RectangleShape2D_1vbqx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1162, 334)
+shape = SubResource("RectangleShape2D_1vbqx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(577, 658)
+shape = SubResource("RectangleShape2D_rhxcs")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(13, 4)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("5_d6vdw")
