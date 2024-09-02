@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 @onready var main = get_tree().get_root().get_node("testarea")
 @onready var projectile = load("res://projectile.tscn")

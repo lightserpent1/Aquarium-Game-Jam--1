@@ -5,7 +5,7 @@
 
 [node name="testarea" type="Node2D"]
 
-[node name="RangedEnemy" type="Node2D" parent="."]
+[node name="RangedEnemy" type="CharacterBody2D" parent="."]
 position = Vector2(537, 394)
 script = ExtResource("1_slqo1")
 
