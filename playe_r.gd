@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name PlayerCharacter
 
-const max_speed = 300
+const max_speed = 400
 const acceleration = 1500
 const friction  = 600
 

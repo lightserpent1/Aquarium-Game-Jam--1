@@ -14,6 +14,8 @@ config/name="River Light Game Jam #1"
 run/main_scene="res://player.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+"<<<<<<<HEAD[global_group]Player"=""
+Enemy=""
 
 [input]
 
