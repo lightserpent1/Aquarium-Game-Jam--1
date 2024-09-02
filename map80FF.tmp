@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://871drlvk1ywa"]
+
+[ext_resource type="Script" path="res://playe_r.gd" id="1_txfcw"]
+[ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_cvv83"]
+[ext_resource type="Script" path="res://random_wall_gen.gd" id="3_p1ayj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6eyra"]
+size = Vector2(62, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arac4"]
+size = Vector2(1172, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlmyd"]
+size = Vector2(18, 667)
+
+[node name="Map" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(334, 136)
+script = ExtResource("1_txfcw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(134, 113)
+scale = Vector2(0.484375, 0.484375)
+texture = ExtResource("2_cvv83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(134, 113)
+shape = SubResource("RectangleShape2D_6eyra")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(575, -11)
+shape = SubResource("RectangleShape2D_arac4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-9, 324)
+shape = SubResource("RectangleShape2D_wlmyd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1162, 334)
+shape = SubResource("RectangleShape2D_wlmyd")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(577, 658)
+shape = SubResource("RectangleShape2D_arac4")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("3_p1ayj")
