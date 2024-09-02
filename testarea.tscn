@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="4_05vn8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ex1r"]
-radius = 189.129
+radius = 61.3491
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4rxs6"]
 vertices = PackedVector2Array(277.023, 322.672, 78.7891, 42.6484, 1102.03, 76.6563, 1103.96, 598.078, 98.2031, 606.844)
@@ -34,13 +34,13 @@ position = Vector2(-20, 20)
 rotation = -1.60726
 scale = Vector2(1.80039, -1)
 shape = SubResource("CircleShape2D_0ex1r")
-disabled = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_4rxs6")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(714, 324)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("3_fgust")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
@@ -52,3 +52,59 @@ position = Vector2(-3, 4)
 shape = SubResource("RectangleShape2D_f13ch")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]
+
+[node name="RangedEnemy2" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target_to_chase")]
+position = Vector2(537, 394)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_slqo1")
+target_to_chase = NodePath("../Player")
+
+[node name="Sprite2D" type="Sprite2D" parent="RangedEnemy2"]
+texture = ExtResource("2_hdp6c")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="RangedEnemy2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangedEnemy2"]
+position = Vector2(-20, 20)
+rotation = -1.60726
+scale = Vector2(1.80039, -1)
+shape = SubResource("CircleShape2D_0ex1r")
+
+[node name="RangedEnemy3" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target_to_chase")]
+position = Vector2(483, 70)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_slqo1")
+target_to_chase = NodePath("../Player")
+
+[node name="Sprite2D" type="Sprite2D" parent="RangedEnemy3"]
+texture = ExtResource("2_hdp6c")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="RangedEnemy3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangedEnemy3"]
+position = Vector2(-20, 20)
+rotation = -1.60726
+scale = Vector2(1.80039, -1)
+shape = SubResource("CircleShape2D_0ex1r")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(827, 424)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(4, 3.00003)
+rotation = -1.60726
+scale = Vector2(1.80039, -1)
+shape = SubResource("CircleShape2D_0ex1r")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="CharacterBody2D"]
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(385, 216)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(4, 3.00003)
+rotation = -1.60726
+scale = Vector2(1.80039, -1)
+shape = SubResource("CircleShape2D_0ex1r")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="CharacterBody2D2"]

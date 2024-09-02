@@ -30,7 +30,7 @@ func _process(delta):
 		return
 	else:
 		attack_started = true
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(randf_range(0.25, 1.5)).timeout
 		shoot()
 		attack_started = false
 
@@ -38,7 +38,7 @@ func _process(delta):
 
 func _physics_process(delta: float) -> void:
 	look_at(target_to_chase.position)
-	if position.distance_to(target_to_chase.position) > 400:
+	if position.distance_to(target_to_chase.position) > 100:
 		navigation_agent.target_position = target_to_chase.global_position
 		velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
 		move_and_slide()
