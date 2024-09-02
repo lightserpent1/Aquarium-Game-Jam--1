@@ -1,13 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2jgi6sd8e8t7"]
+[gd_scene load_steps=8 format=3 uid="uid://d2jgi6sd8e8t7"]
 
 [ext_resource type="Script" path="res://ranged_enemy.gd" id="1_slqo1"]
 [ext_resource type="Texture2D" uid="uid://dxmij2rpeiql" path="res://enemyart/enemyspider.png" id="2_m7ny3"]
+[ext_resource type="Script" path="res://playe_r.gd" id="3_fgust"]
+[ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="4_05vn8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6pna0"]
+radius = 1.95533
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4rxs6"]
+vertices = PackedVector2Array(277.023, 322.672, 78.7891, 42.6484, 1102.03, 76.6563, 1103.96, 598.078, 98.2031, 606.844)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(59, 32, 1112, 67, 1114, 608, 80, 617, 265, 323)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f13ch"]
+size = Vector2(128, 127)
 
 [node name="testarea" type="Node2D"]
 
-[node name="RangedEnemy" type="CharacterBody2D" parent="."]
+[node name="RangedEnemy" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target_to_chase")]
 position = Vector2(537, 394)
 script = ExtResource("1_slqo1")
+target_to_chase = NodePath("../Player")
 
 [node name="Sprite2D" type="Sprite2D" parent="RangedEnemy"]
 texture = ExtResource("2_m7ny3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangedEnemy"]
+scale = Vector2(8.28, 10.04)
+shape = SubResource("CircleShape2D_6pna0")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="RangedEnemy"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_4rxs6")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(714, 324)
+script = ExtResource("3_fgust")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(167, 80)
+texture = ExtResource("4_05vn8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(167, 79.5)
+shape = SubResource("RectangleShape2D_f13ch")
