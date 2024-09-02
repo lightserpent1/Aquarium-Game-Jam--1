@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="4_05vn8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ex1r"]
-radius = 280.0
+radius = 189.129
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4rxs6"]
 vertices = PackedVector2Array(277.023, 322.672, 78.7891, 42.6484, 1102.03, 76.6563, 1103.96, 598.078, 98.2031, 606.844)
@@ -30,6 +30,8 @@ texture = ExtResource("2_hdp6c")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="RangedEnemy"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RangedEnemy"]
+position = Vector2(-20, 20)
+rotation = -1.60726
 scale = Vector2(1.80039, -1)
 shape = SubResource("CircleShape2D_0ex1r")
 disabled = true
@@ -42,9 +44,11 @@ position = Vector2(714, 324)
 script = ExtResource("3_fgust")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(167, 80)
+position = Vector2(-1, 4)
 texture = ExtResource("4_05vn8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(167, 79.5)
+position = Vector2(-3, 4)
 shape = SubResource("RectangleShape2D_f13ch")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]

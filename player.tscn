@@ -9,13 +9,13 @@ size = Vector2(128, 127)
 [node name="Test World" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(334, 136)
+position = Vector2(257, 100)
 script = ExtResource("1_0agcn")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(167, 80)
+position = Vector2(-1, 1)
 texture = ExtResource("2_mxlmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(167, 79.5)
+position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_t6r42")
