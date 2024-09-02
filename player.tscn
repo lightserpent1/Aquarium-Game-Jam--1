@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=4 format=3 uid="uid://devhejskg02o2"]
+=======
+[gd_scene load_steps=4 format=3 uid="uid://1t7ll0bemdnw"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://playe_r.gd" id="1_0agcn"]
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_mxlmi"]
@@ -8,7 +12,11 @@ size = Vector2(128, 127)
 
 [node name="Test World" type="Node2D"]
 
+<<<<<<< Updated upstream
 [node name="Player" type="CharacterBody2D" parent="."]
+=======
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+>>>>>>> Stashed changes
 position = Vector2(334, 136)
 script = ExtResource("1_0agcn")
 
