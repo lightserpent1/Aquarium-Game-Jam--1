@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://871drlvk1ywa"]
+[gd_scene load_steps=7 format=3 uid="uid://6dvcxqa6noai"]
 
 [ext_resource type="Script" path="res://playe_r.gd" id="1_txfcw"]
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_cvv83"]
@@ -20,12 +20,12 @@ position = Vector2(334, 136)
 script = ExtResource("1_txfcw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(134, 113)
+position = Vector2(-1.00002, -3.05176e-05)
 scale = Vector2(0.484375, 0.484375)
 texture = ExtResource("2_cvv83")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(134, 113)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_6eyra")
 
 [node name="Walls" type="StaticBody2D" parent="."]
@@ -46,5 +46,5 @@ shape = SubResource("RectangleShape2D_wlmyd")
 position = Vector2(577, 658)
 shape = SubResource("RectangleShape2D_arac4")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Spawn_Wall" type="Node2D" parent="."]
 script = ExtResource("3_mw6i3")
