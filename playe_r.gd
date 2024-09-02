@@ -8,9 +8,9 @@ const friction  = 600
 
 func player_movement(input, delta):
 
-	if input: velocity = velocity.move_toward(input * max_speed , delta * acceleration)
+	if input: velocity = velocity.move_toward(input * max_speed * Global.speedVariable, delta * acceleration* Global.speedVariable)
 
-	else: velocity = velocity.move_toward(Vector2(0,0), delta * friction)
+	else: velocity = velocity.move_toward(Vector2(0,0), delta * friction * Global.speedVariable)
 
 
 func _physics_process(delta):

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://v48qppfwerbd"]
+[gd_scene load_steps=8 format=3 uid="uid://v48qppfwerbd"]
 
 [ext_resource type="Script" path="res://playe_r.gd" id="1_txfcw"]
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_cvv83"]
 [ext_resource type="Script" path="res://random_wall_gen.gd" id="3_mw6i3"]
+[ext_resource type="Script" path="res://UI.gd" id="4_mhby6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6eyra"]
 size = Vector2(62, 62)
@@ -48,3 +49,8 @@ shape = SubResource("RectangleShape2D_arac4")
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("3_mw6i3")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1.0
+offset_bottom = 23.0
+script = ExtResource("4_mhby6")
