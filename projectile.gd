@@ -4,12 +4,12 @@ extends CharacterBody2D
 
 var dir : float
 var spawnPos : Vector2
-var spawnRot : float
+var spawnRot: float
 
 func _ready():
 	global_position = spawnPos
-	global_rotation = spawnRot	
+	global_rotation = spawnRot
 
-func _physics_process(delta):
-	velocity = Vector2(0, SPEED).rotated(dir)
+func _physics_process(delta: float) -> void:
+	velocity = Vector2(0,-SPEED).rotated(dir)
 	move_and_slide()

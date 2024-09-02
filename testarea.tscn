@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2jgi6sd8e8t7"]
+
+[ext_resource type="Script" path="res://ranged_enemy.gd" id="1_slqo1"]
+[ext_resource type="Texture2D" uid="uid://dxmij2rpeiql" path="res://enemyart/enemyspider.png" id="2_m7ny3"]
+
+[node name="testarea" type="Node2D"]
+
+[node name="RangedEnemy" type="Node2D" parent="."]
+position = Vector2(537, 394)
+script = ExtResource("1_slqo1")
+
+[node name="Sprite2D" type="Sprite2D" parent="RangedEnemy"]
+texture = ExtResource("2_m7ny3")

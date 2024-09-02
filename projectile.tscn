@@ -1,16 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://0kpt13adhmmc"]
+[gd_scene load_steps=4 format=3 uid="uid://brn00stcanrqa"]
 
-[ext_resource type="Script" path="res://projectileAreaVersion.gd" id="1_wxixp"]
+[ext_resource type="Script" path="res://projectile.gd" id="1_llftb"]
 [ext_resource type="Texture2D" uid="uid://bmtl41tmmw4sf" path="res://enemyart/fireball.png" id="2_wxf8k"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_frnmk"]
-radius = 224.437
+[sub_resource type="CircleShape2D" id="CircleShape2D_hgvym"]
+radius = 233.803
 
-[node name="Projectile" type="Area2D"]
-script = ExtResource("1_wxixp")
+[node name="projectile" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_llftb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_wxf8k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_frnmk")
+shape = SubResource("CircleShape2D_hgvym")
