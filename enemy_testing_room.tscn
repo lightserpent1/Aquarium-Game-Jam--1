@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://playe_r.gd" id="1_5eksn"]
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_su788"]
-[ext_resource type="PackedScene" uid="uid://r643b4x1846" path="res://enemy.tscn" id="3_ropfc"]
+[ext_resource type="PackedScene" uid="uid://r643b4x1846" path="res://rangedenemy.tscn" id="3_ropfc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bk7ie"]
 size = Vector2(128, 127)
