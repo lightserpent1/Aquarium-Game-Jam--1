@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://r643b4x1846" path="res://rangedenemy.tscn" id="6_h4058"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4rxs6"]
-vertices = PackedVector2Array(1103.96, 598.078, 889.508, 599.938, 895.258, 598.406, 722.742, 598.406, 733.539, 601.297, 89.4922, 606.906, 809, 276.492, 722.742, 299.594, 534.188, 216, 514.211, 141.398, 1102.03, 76.6563, 958.406, 535.258, 659.594, 535.258, 981.508, 449, 958.406, 362.742, 659.594, 362.742, 514.211, 290.602, 895.258, 299.594, 385, 365.188, 636.492, 449, 75.9922, 345.477, 310.398, 345.211, 459.602, 345.211, 459.602, 86.7891, 255.789, 290.602, 69.2266, 42.3438, 235.813, 216, 255.789, 141.398, 310.398, 86.7891, 385, 66.8125)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10), PackedInt32Array(0, 2, 11), PackedInt32Array(12, 3, 5), PackedInt32Array(10, 0, 11, 13), PackedInt32Array(10, 13, 14), PackedInt32Array(8, 7, 15, 16), PackedInt32Array(10, 14, 17), PackedInt32Array(18, 19, 12, 5, 20, 21), PackedInt32Array(16, 15, 19, 22), PackedInt32Array(10, 17, 6), PackedInt32Array(10, 9, 23), PackedInt32Array(18, 22, 19), PackedInt32Array(24, 21, 20), PackedInt32Array(24, 20, 25, 26), PackedInt32Array(27, 26, 25), PackedInt32Array(28, 27, 25), PackedInt32Array(29, 28, 25), PackedInt32Array(29, 25, 10), PackedInt32Array(29, 10, 23)])
+vertices = PackedVector2Array(470.859, 67.2891, 421.422, 54.0391, 1102.03, 76.6563, 1103.96, 598.078, 889.508, 599.938, 895.258, 598.406, 722.742, 598.406, 733.539, 601.297, 89.4922, 606.906, 69.2266, 42.3438, 356.609, 51.8906, 299.141, 67.2891, 533.711, 130.141, 895.258, 299.594, 809, 276.492, 958.406, 535.258, 659.594, 535.258, 236.289, 130.141, 75.9922, 345.477, 213.289, 216, 236.289, 301.859, 981.508, 449, 958.406, 362.742, 722.742, 299.594, 556.711, 216, 659.594, 362.742, 533.711, 301.859, 636.492, 449, 385, 387.711, 470.859, 364.711, 299.141, 364.711)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(9, 10, 11), PackedInt32Array(12, 0, 2, 13, 14), PackedInt32Array(3, 5, 15), PackedInt32Array(16, 6, 8), PackedInt32Array(9, 11, 17), PackedInt32Array(18, 9, 17, 19), PackedInt32Array(18, 19, 20), PackedInt32Array(2, 3, 15, 21), PackedInt32Array(2, 21, 22), PackedInt32Array(2, 22, 13), PackedInt32Array(12, 14, 23, 24), PackedInt32Array(24, 23, 25, 26), PackedInt32Array(27, 16, 8, 18, 28), PackedInt32Array(26, 25, 27, 29), PackedInt32Array(18, 20, 30), PackedInt32Array(28, 29, 27), PackedInt32Array(18, 30, 28)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(59, 32, 1112, 67, 1114, 608, 80, 617, 66, 346)])
 border_size = 1.0
 
@@ -51,7 +51,7 @@ scale = Vector2(-1.76314, -1.66251)
 shape = SubResource("CircleShape2D_0ex1r")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Obstacle"]
-radius = 138.84
+radius = 161.36
 affect_navigation_mesh = true
 
 [node name="Walls" type="StaticBody2D" parent="."]
@@ -100,7 +100,11 @@ position = Vector2(-294, 23)
 shape = SubResource("RectangleShape2D_1l8ml")
 
 [node name="RangedEnemy" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("6_h4058")]
-position = Vector2(323, 520)
+position = Vector2(365, 529)
+target_to_chase = NodePath("../Player")
+
+[node name="RangedEnemy2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("6_h4058")]
+position = Vector2(613, 502)
 target_to_chase = NodePath("../Player")
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]

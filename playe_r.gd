@@ -4,7 +4,7 @@ class_name PlayerCharacter
 
 const max_speed = 400
 const acceleration = 1500
-const friction  = 600
+const friction  = 1500
 
 func player_movement(input, delta):
 

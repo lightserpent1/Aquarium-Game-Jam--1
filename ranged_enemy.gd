@@ -40,7 +40,7 @@ func _process(delta):
 
 func _physics_process(delta: float) -> void:
 	look_at(target_to_chase.position)
-	if position.distance_to(target_to_chase.position) > 50:
+	if position.distance_to(target_to_chase.position) > 150:
 		navigation_agent.target_position = target_to_chase.global_position
 		velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
 		move_and_slide()
@@ -62,5 +62,5 @@ func damage() -> void:
 	set_health_label()
 	set_health_bar()
 
-func hit():
-	print("enemy hit")
+#func hit():
+#	print("I'm hit!")
