@@ -19,8 +19,12 @@ func _process(delta: float) -> void:
 
 
 func on_body_entered(body):
+	print("body then my self:")
 	print(body.get_parent().name)
-	if body.get_parent().has_method("hit"):
+	print(self.get_parent().get_parent().name)
+	
+
+	if body.get_parent().has_method("hit") and body.get_parent() != self.get_parent().get_parent():
 		body.get_parent().hit()
 	#if body.name == "Area2D":
 		#get_parent().queue_free()
