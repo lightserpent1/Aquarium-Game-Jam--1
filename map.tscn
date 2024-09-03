@@ -1,14 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://v48qppfwerbd"]
+[gd_scene load_steps=8 format=3 uid="uid://v48qppfwerbd"]
 
 [ext_resource type="Script" path="res://playe_r.gd" id="1_txfcw"]
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_cvv83"]
 [ext_resource type="Script" path="res://random_wall_gen.gd" id="3_mw6i3"]
 [ext_resource type="Script" path="res://UI.gd" id="4_mhby6"]
-[ext_resource type="Script" path="res://LabelForGlobalSpeed.gd" id="5_tffs8"]
-[ext_resource type="Script" path="res://powerup_spawn.gd" id="6_ausp2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnitb"]
-size = Vector2(128, 127)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6eyra"]
+size = Vector2(62, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arac4"]
 size = Vector2(1172, 20)
@@ -18,23 +16,18 @@ size = Vector2(18, 667)
 
 [node name="Map" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
-position = Vector2(593, 87)
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(334, 136)
 script = ExtResource("1_txfcw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-1, 0.5)
-shape = SubResource("RectangleShape2D_qnitb")
-
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(-1, 0)
+position = Vector2(134, 113)
+scale = Vector2(0.484375, 0.484375)
 texture = ExtResource("2_cvv83")
 
-[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
-position = Vector2(-1, 0)
-shape = SubResource("RectangleShape2D_qnitb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(134, 113)
+shape = SubResource("RectangleShape2D_6eyra")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -61,15 +54,3 @@ script = ExtResource("3_mw6i3")
 offset_right = 1.0
 offset_bottom = 23.0
 script = ExtResource("4_mhby6")
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 929.0
-offset_top = 32.0
-offset_right = 930.0
-offset_bottom = 55.0
-size_flags_horizontal = 8
-size_flags_vertical = 8
-script = ExtResource("5_tffs8")
-
-[node name="PowerupSpawn" type="Node2D" parent="."]
-script = ExtResource("6_ausp2")
