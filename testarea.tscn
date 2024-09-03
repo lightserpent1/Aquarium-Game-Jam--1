@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2jgi6sd8e8t7"]
 
+[ext_resource type="Texture2D" uid="uid://dcgcihdxmwlyd" path="res://enemyart/sangface.PNG" id="2_vxgw7"]
 [ext_resource type="Script" path="res://playe_r.gd" id="3_fgust"]
-[ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="4_05vn8"]
 [ext_resource type="PackedScene" uid="uid://r643b4x1846" path="res://rangedenemy.tscn" id="6_h4058"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4rxs6"]
@@ -72,7 +72,6 @@ shape = SubResource("RectangleShape2D_rhxcs")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
 position = Vector2(2324, 668)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1vbqx")
 
 [node name="RangedEnemy2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("6_h4058")]
@@ -89,8 +88,9 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_1l8ml")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(-2, -4)
-texture = ExtResource("4_05vn8")
+position = Vector2(3.99998, -4.00002)
+scale = Vector2(0.228314, 0.179878)
+texture = ExtResource("2_vxgw7")
 
 [node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
 position = Vector2(293, -25)

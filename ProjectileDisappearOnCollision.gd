@@ -26,5 +26,5 @@ func on_body_entered(body):
 		#get_parent().queue_free()
 	#if body.name != "ProjectileArea2D":
 		#get_parent().queue_free()
-	get_parent().queue_free()
+	#get_parent().queue_free()
 

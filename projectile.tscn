@@ -5,17 +5,14 @@
 [ext_resource type="Script" path="res://ProjectileDisappearOnCollision.gd" id="3_mdhb0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgvym"]
-radius = 233.803
+radius = 156.549
 
 [node name="projectile" type="CharacterBody2D"]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.330653, 0.198943)
 script = ExtResource("1_llftb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_wxf8k")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_hgvym")
 
 [node name="ProjectileArea2D" type="Area2D" parent="."]
 script = ExtResource("3_mdhb0")
