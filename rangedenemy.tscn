@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b7rkakjsutm0k" path="res://enemyart/rocketenemy.png" id="2_dq7m5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ppws3"]
-radius = 88.6512
+radius = 150.042
 
 [node name="RangedEnemy" type="CharacterBody2D" groups=["Enemy"]]
 position = Vector2(300, 159)
@@ -15,11 +15,14 @@ script = ExtResource("1_28cma")
 texture = ExtResource("2_dq7m5")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_max_distance = 1000.0
+simplify_path = true
+avoidance_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-50, -20)
 rotation = -1.59978
-scale = Vector2(1.40554, 4.96573)
+scale = Vector2(2, 2.471)
 shape = SubResource("CircleShape2D_ppws3")
 
 [node name="HealthLabel" type="Label" parent="."]
@@ -30,6 +33,7 @@ offset_bottom = -967.0
 scale = Vector2(5.83557, 7.26227)
 text = "Health: 5
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -360.0
@@ -41,3 +45,4 @@ max_value = 5.0
 step = 1.0
 value = 5.0
 show_percentage = false
+metadata/_edit_use_anchors_ = true

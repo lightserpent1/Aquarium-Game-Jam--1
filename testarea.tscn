@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://r643b4x1846" path="res://rangedenemy.tscn" id="6_h4058"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4rxs6"]
-vertices = PackedVector2Array(277.023, 322.672, 78.7891, 42.6484, 1102.03, 76.6563, 1103.96, 598.078, 98.2031, 606.844)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 0)])
+vertices = PackedVector2Array(809, 240.453, 704.719, 268.383, 502.563, 216, 486.813, 157.219, 1102.03, 76.6563, 1103.96, 598.078, 943.398, 599.477, 989.617, 553.281, 628.383, 553.281, 676.898, 601.789, 98.2031, 606.844, 277.023, 322.672, 385, 333.563, 600.453, 449, 326.219, 317.813, 628.383, 344.719, 486.813, 274.781, 1017.55, 449, 989.617, 344.719, 913.281, 268.383, 443.781, 317.813, 283.188, 274.781, 78.7891, 42.6484, 267.438, 216, 283.188, 157.219, 326.219, 114.188, 443.781, 114.188, 385, 98.4375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 8, 11, 14), PackedInt32Array(2, 1, 15, 16), PackedInt32Array(5, 7, 17), PackedInt32Array(4, 5, 17, 18), PackedInt32Array(4, 18, 19), PackedInt32Array(16, 15, 13, 20), PackedInt32Array(4, 19, 0), PackedInt32Array(12, 20, 13), PackedInt32Array(21, 14, 11), PackedInt32Array(21, 11, 22, 23), PackedInt32Array(24, 23, 22), PackedInt32Array(25, 24, 22), PackedInt32Array(4, 3, 26), PackedInt32Array(27, 25, 22), PackedInt32Array(27, 22, 4), PackedInt32Array(27, 4, 26)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(59, 32, 1112, 67, 1114, 608, 80, 617, 265, 323)])
+border_size = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ex1r"]
 radius = 61.3491
@@ -26,29 +27,32 @@ size = Vector2(143, 150.5)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_4rxs6")
 
-[node name="Obstacle2" type="CharacterBody2D" parent="."]
+[node name="Obstacle2" type="CharacterBody2D" parent="NavigationRegion2D"]
 position = Vector2(809, 449)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Obstacle2"]
 position = Vector2(4, 3.00003)
 rotation = -1.60726
-scale = Vector2(1.80039, -1.73265)
+scale = Vector2(1.80039, 1.79874)
 shape = SubResource("CircleShape2D_0ex1r")
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacle2"]
-radius = 108.11
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Obstacle2"]
+scale = Vector2(9.32, 1)
+radius = 198.2
+affect_navigation_mesh = true
 
-[node name="Obstacle" type="CharacterBody2D" parent="."]
+[node name="Obstacle" type="CharacterBody2D" parent="NavigationRegion2D"]
 position = Vector2(385, 216)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Obstacle"]
 position = Vector2(4, 3.00003)
 rotation = -1.60726
 scale = Vector2(-1.76314, -1.66251)
 shape = SubResource("CircleShape2D_0ex1r")
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacle"]
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Obstacle"]
 radius = 107.21
+affect_navigation_mesh = true
 
 [node name="Walls" type="StaticBody2D" parent="."]
 position = Vector2(13, 4)
@@ -74,10 +78,6 @@ shape = SubResource("RectangleShape2D_rhxcs")
 position = Vector2(2324, 668)
 shape = SubResource("RectangleShape2D_1vbqx")
 
-[node name="RangedEnemy2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("6_h4058")]
-position = Vector2(277, 526)
-target_to_chase = NodePath("../Player")
-
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(795, 210)
 scale = Vector2(0.5, 0.5)
@@ -98,5 +98,9 @@ position = Vector2(293, -25)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2(-294, 23)
 shape = SubResource("RectangleShape2D_1l8ml")
+
+[node name="RangedEnemy" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("6_h4058")]
+position = Vector2(323, 520)
+target_to_chase = NodePath("../Player")
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
