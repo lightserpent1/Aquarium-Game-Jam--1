@@ -19,7 +19,7 @@ size = Vector2(1172, 20)
 size = Vector2(18, 667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l8ml"]
-size = Vector2(128, 127)
+size = Vector2(143, 150.5)
 
 [node name="testarea" type="Node2D"]
 
@@ -50,6 +50,14 @@ shape = SubResource("CircleShape2D_0ex1r")
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacle"]
 radius = 112.61
 
+[node name="Area2D" type="Area2D" parent="Obstacle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle/Area2D"]
+position = Vector2(4, 3.00003)
+rotation = -1.60726
+scale = Vector2(1.80039, 2.20285)
+shape = SubResource("CircleShape2D_0ex1r")
+
 [node name="Walls" type="StaticBody2D" parent="."]
 position = Vector2(13, 4)
 scale = Vector2(0.98199, 0.983077)
@@ -75,8 +83,12 @@ position = Vector2(277, 526)
 target_to_chase = NodePath("../Player")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
-position = Vector2(476, 138)
+position = Vector2(795, 210)
 script = ExtResource("3_fgust")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_1l8ml")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(-2, -4)
@@ -86,11 +98,7 @@ texture = ExtResource("4_05vn8")
 position = Vector2(293, -25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
-position = Vector2(-294, 24)
-shape = SubResource("RectangleShape2D_1l8ml")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, -2)
+position = Vector2(-301.5, 35.75)
 shape = SubResource("RectangleShape2D_1l8ml")
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
