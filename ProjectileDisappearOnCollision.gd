@@ -20,8 +20,8 @@ func _process(delta: float) -> void:
 
 func on_body_entered(body):
 	print(body.get_parent().name)
-	if body.has_method("hit"):
-		body.hit()
+	if body.get_parent().has_method("hit"):
+		body.get_parent().hit()
 	#if body.name == "Area2D":
 		#get_parent().queue_free()
 	#if body.name != "ProjectileArea2D":

@@ -63,5 +63,5 @@ func damage() -> void:
 	set_health_label()
 	set_health_bar()
 
-#func hit():
-#	print("I'm hit!")
+func hit():
+	damage()

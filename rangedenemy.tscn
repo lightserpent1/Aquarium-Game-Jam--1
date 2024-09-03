@@ -2,10 +2,26 @@
 
 [ext_resource type="Script" path="res://ranged_enemy.gd" id="1_28cma"]
 [ext_resource type="Texture2D" uid="uid://b7rkakjsutm0k" path="res://enemyart/rocketenemy.png" id="2_dq7m5"]
-[ext_resource type="Script" path="res://area2dhit.gd" id="3_jy1q5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ppws3"]
 radius = 150.042
+
+[sub_resource type="GDScript" id="GDScript_snurn"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func hit():
+	self.get_parent().damage()
+	pass"
 
 [node name="RangedEnemy" type="CharacterBody2D" groups=["Enemy"]]
 position = Vector2(300, 159)
@@ -49,7 +65,7 @@ show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("3_jy1q5")
+script = SubResource("GDScript_snurn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-50, -20)
