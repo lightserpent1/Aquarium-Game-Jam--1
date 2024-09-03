@@ -27,7 +27,8 @@ func shoot():
 	instance.spawnPos = global_position
 	instance.spawnRot = global_rotation
 	#main.add_child.call_deferred(instance)
-	self.add_child.call_deferred(instance)
+	instance.get_node("ProjectileArea2D").ownerIs(self)
+	main.add_child.call_deferred(instance)
 
 func _process(delta):
 	if attack_started:
