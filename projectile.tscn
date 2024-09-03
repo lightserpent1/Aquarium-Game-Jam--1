@@ -8,7 +8,7 @@
 radius = 156.549
 
 [node name="projectile" type="CharacterBody2D"]
-scale = Vector2(0.1, -0.0600006)
+scale = Vector2(1, -0.6)
 script = ExtResource("1_llftb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
