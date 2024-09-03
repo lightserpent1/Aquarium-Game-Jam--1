@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://qluh0n8egh84"]
+[gd_scene load_steps=4 format=3 uid="uid://qluh0n8egh84"]
 
+[ext_resource type="Script" path="res://hole.gd" id="1_o3kmf"]
 [ext_resource type="Texture2D" uid="uid://c8oh8dcfgqndb" path="res://assets/wall.jpg" id="1_xhbit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p27aw"]
 size = Vector2(181, 102)
 
 [node name="wall" type="Node2D"]
+script = ExtResource("1_o3kmf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
