@@ -39,7 +39,7 @@ func _process(delta):
 		attack_started = false
 
 func _physics_process(delta: float) -> void:
-	#look_at(target_to_chase.position)
+	look_at(target_to_chase.position)
 	if position.distance_to(target_to_chase.position) > 50:
 		navigation_agent.target_position = target_to_chase.global_position
 		velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
