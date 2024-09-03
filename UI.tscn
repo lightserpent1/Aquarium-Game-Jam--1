@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://wc552r6cy3nn"]
+[gd_scene load_steps=3 format=3 uid="uid://wc552r6cy3nn"]
 
 [ext_resource type="Script" path="res://UI.gd" id="1_f3t2r"]
+[ext_resource type="Script" path="res://LabelForGlobalSpeed.gd" id="2_opc40"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -34,3 +35,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 script = ExtResource("1_f3t2r")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 929.0
+offset_top = 32.0
+offset_right = 930.0
+offset_bottom = 55.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("2_opc40")

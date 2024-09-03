@@ -14,9 +14,11 @@ func player_movement(input, delta):
 
 
 func _physics_process(delta):
-
 	var input = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
-
 	player_movement(input, delta)
-
 	move_and_slide()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("power"):
+		print("test")
