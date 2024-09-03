@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2jgi6sd8e8t7"]
+[gd_scene load_steps=8 format=3 uid="uid://b2r40bq3yp0bi"]
 
 [ext_resource type="Script" path="res://playe_r.gd" id="3_fgust"]
-[ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="4_05vn8"]
-[ext_resource type="PackedScene" uid="uid://r643b4x1846" path="res://rangedenemy.tscn" id="6_h4058"]
+[ext_resource type="PackedScene" path="res://rangedenemy.tscn" id="6_h4058"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4rxs6"]
 vertices = PackedVector2Array(277.023, 322.672, 78.7891, 42.6484, 1102.03, 76.6563, 1103.96, 598.078, 98.2031, 606.844)
