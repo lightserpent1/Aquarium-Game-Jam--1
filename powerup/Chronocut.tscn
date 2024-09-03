@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://beylwj4cj5jux"]
+
+[ext_resource type="Texture2D" uid="uid://b72aduwlyj16u" path="res://assets/chronocutTEMP.jpg" id="1_msqo7"]
+[ext_resource type="Script" path="res://powerup/chronocut.gd" id="1_o0jb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht02g"]
+size = Vector2(189, 175)
+
+[node name="Chronocut" type="Node2D"]
+position = Vector2(133, 85)
+script = ExtResource("1_o0jb2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-1.00003, -2.99998)
+scale = Vector2(0.315972, 0.315972)
+texture = ExtResource("1_msqo7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, -4)
+shape = SubResource("RectangleShape2D_ht02g")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

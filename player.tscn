@@ -1,21 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://devhejskg02o2"]
+[gd_scene load_steps=5 format=3 uid="uid://devhejskg02o2"]
 
 [ext_resource type="Script" path="res://playe_r.gd" id="1_0agcn"]
 [ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_mxlmi"]
+[ext_resource type="PackedScene" uid="uid://beylwj4cj5jux" path="res://powerup/Chronocut.tscn" id="3_7nbj1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6r42"]
 size = Vector2(128, 127)
 
 [node name="Test World" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(257, 100)
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(476, 138)
 script = ExtResource("1_0agcn")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(-1, 1)
+position = Vector2(-2, -4)
 texture = ExtResource("2_mxlmi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-1, 0.5)
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
+position = Vector2(293, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(-294, 24)
 shape = SubResource("RectangleShape2D_t6r42")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_t6r42")
+
+[node name="Chronocut" parent="." instance=ExtResource("3_7nbj1")]
+
+[connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]

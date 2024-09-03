@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c367cr8qs0g10"]
+
+[ext_resource type="Script" path="res://playe_r.gd" id="1_mtr3u"]
+[ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="2_wrwpy"]
+[ext_resource type="PackedScene" uid="uid://beylwj4cj5jux" path="res://powerup/Chronocut.tscn" id="3_0ogjq"]
+[ext_resource type="Script" path="res://LabelForGlobalSpeed.gd" id="4_xq3aj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyi4n"]
+size = Vector2(128, 127)
+
+[node name="PowerupTest" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(593, 87)
+script = ExtResource("1_mtr3u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_fyi4n")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(-1, 0)
+texture = ExtResource("2_wrwpy")
+
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_fyi4n")
+
+[node name="Chronocut" parent="." groups=["powerup"] instance=ExtResource("3_0ogjq")]
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 929.0
+offset_top = 32.0
+offset_right = 930.0
+offset_bottom = 55.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("4_xq3aj")
