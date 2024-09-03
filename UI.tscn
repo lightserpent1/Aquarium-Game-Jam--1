@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://wc552r6cy3nn"]
+[gd_scene load_steps=3 format=3 uid="uid://8c1b1ve1ko7w"]
 
 [ext_resource type="Script" path="res://UI.gd" id="1_f3t2r"]
 [ext_resource type="Script" path="res://LabelForGlobalSpeed.gd" id="2_opc40"]
