@@ -9,9 +9,6 @@ vertices = PackedVector2Array(277.023, 322.672, 78.7891, 42.6484, 1102.03, 76.65
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 0)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(59, 32, 1112, 67, 1114, 608, 80, 617, 265, 323)])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f13ch"]
-size = Vector2(128, 127)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ex1r"]
 radius = 61.3491
 
@@ -21,25 +18,13 @@ size = Vector2(1172, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vbqx"]
 size = Vector2(18, 667)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l8ml"]
+size = Vector2(128, 127)
+
 [node name="testarea" type="Node2D"]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_4rxs6")
-
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(714, 324)
-scale = Vector2(0.5, 0.5)
-script = ExtResource("3_fgust")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(-1, 4)
-texture = ExtResource("4_05vn8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-3, 4)
-shape = SubResource("RectangleShape2D_f13ch")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Player"]
 
 [node name="Obstacle2" type="CharacterBody2D" parent="."]
 position = Vector2(827, 424)
@@ -88,3 +73,24 @@ shape = SubResource("RectangleShape2D_rhxcs")
 [node name="RangedEnemy2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("6_h4058")]
 position = Vector2(277, 526)
 target_to_chase = NodePath("../Player")
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(476, 138)
+script = ExtResource("3_fgust")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(-2, -4)
+texture = ExtResource("4_05vn8")
+
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
+position = Vector2(293, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(-294, 24)
+shape = SubResource("RectangleShape2D_1l8ml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_1l8ml")
+
+[connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
