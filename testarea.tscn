@@ -63,12 +63,17 @@ position = Vector2(-9, 324)
 shape = SubResource("RectangleShape2D_1vbqx")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
-position = Vector2(1162, 334)
+position = Vector2(1154.8, 336.698)
 shape = SubResource("RectangleShape2D_1vbqx")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
 position = Vector2(577, 658)
 shape = SubResource("RectangleShape2D_rhxcs")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(2324, 668)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1vbqx")
 
 [node name="RangedEnemy2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("6_h4058")]
 position = Vector2(277, 526)
@@ -76,6 +81,7 @@ target_to_chase = NodePath("../Player")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(795, 210)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("3_fgust")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]

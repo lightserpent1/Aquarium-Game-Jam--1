@@ -17,11 +17,11 @@ texture = ExtResource("2_wxf8k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hgvym")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="ProjectileArea2D" type="Area2D" parent="."]
 script = ExtResource("3_mdhb0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="ProjectileAreaCollision2D" type="CollisionShape2D" parent="ProjectileArea2D"]
 scale = Vector2(1.25772, -1.70726)
 shape = SubResource("CircleShape2D_hgvym")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="ProjectileArea2D" to="." method="_on_area_2d_area_entered"]

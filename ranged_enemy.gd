@@ -34,7 +34,7 @@ func _process(delta):
 		return
 	else:
 		attack_started = true
-		await get_tree().create_timer(randf_range(0.01, 0.25)).timeout
+		await get_tree().create_timer(randf_range(0.25, 0.5)).timeout
 		shoot()
 		attack_started = false
 
@@ -63,4 +63,4 @@ func damage() -> void:
 	set_health_bar()
 
 func hit():
-	pass
+	print("enemy hit")
