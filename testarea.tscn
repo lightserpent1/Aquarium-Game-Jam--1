@@ -104,7 +104,7 @@ position = Vector2(365, 529)
 target_to_chase = NodePath("../Player")
 
 [node name="RangedEnemy2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("6_h4058")]
-position = Vector2(613, 502)
+position = Vector2(567, 490)
 target_to_chase = NodePath("../Player")
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]

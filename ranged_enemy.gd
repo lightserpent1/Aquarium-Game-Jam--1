@@ -4,6 +4,7 @@ extends CharacterBody2D
 const MAX_HEALTH = 5
 var health = MAX_HEALTH
 
+
 @onready var main = get_tree().get_root().get_node("testarea")
 @onready var projectile = load("res://projectile.tscn")
 var attack_started = false;
@@ -22,6 +23,7 @@ func _ready():
 	
 	
 func shoot():
+	
 	var instance = projectile.instantiate()
 	instance.dir = rotation
 	instance.spawnPos = global_position
@@ -45,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	if position.distance_to(target_to_chase.position) > 150:
 		navigation_agent.target_position = target_to_chase.global_position
 		velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
-		move_and_slide()
+		#move_and_slide()
 
 func set_health_label() -> void:
 	$HealthLabel.text = "Health: %s" % health
