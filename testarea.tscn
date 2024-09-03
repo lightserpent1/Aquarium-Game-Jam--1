@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2jgi6sd8e8t7"]
+[gd_scene load_steps=8 format=3 uid="uid://d2jgi6sd8e8t7"]
 
 [ext_resource type="Script" path="res://playe_r.gd" id="3_fgust"]
-[ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="4_05vn8"]
 [ext_resource type="PackedScene" uid="uid://r643b4x1846" path="res://rangedenemy.tscn" id="6_h4058"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4rxs6"]
@@ -33,7 +32,7 @@ script = ExtResource("3_fgust")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(-1, 4)
-texture = ExtResource("4_05vn8")
+scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-3, 4)
@@ -51,6 +50,7 @@ scale = Vector2(1.80039, -1)
 shape = SubResource("CircleShape2D_0ex1r")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacle2"]
+radius = 108.11
 
 [node name="Obstacle" type="CharacterBody2D" parent="."]
 position = Vector2(385, 216)
@@ -62,6 +62,7 @@ scale = Vector2(1.80039, -1)
 shape = SubResource("CircleShape2D_0ex1r")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Obstacle"]
+radius = 112.61
 
 [node name="Walls" type="StaticBody2D" parent="."]
 position = Vector2(13, 4)
@@ -83,4 +84,6 @@ shape = SubResource("RectangleShape2D_1vbqx")
 position = Vector2(577, 658)
 shape = SubResource("RectangleShape2D_rhxcs")
 
-[node name="RangedEnemy2" parent="." instance=ExtResource("6_h4058")]
+[node name="RangedEnemy2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("6_h4058")]
+position = Vector2(277, 526)
+target_to_chase = NodePath("../Player")
