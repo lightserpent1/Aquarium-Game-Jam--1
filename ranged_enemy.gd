@@ -58,6 +58,7 @@ func _input(event: InputEvent) -> void:
 func damage() -> void:
 	health -= 1
 	if health < 0:
+		queue_free()
 		health = MAX_HEALTH
 	set_health_label()
 	set_health_bar()

@@ -11,4 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 func hit():
-	print("I'm hit!")
+	self.get_parent().damage()
+	pass
