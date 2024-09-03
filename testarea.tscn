@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2jgi6sd8e8t7"]
+[gd_scene load_steps=9 format=3 uid="uid://d2jgi6sd8e8t7"]
 
 [ext_resource type="Script" path="res://playe_r.gd" id="3_fgust"]
+[ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="4_05vn8"]
 [ext_resource type="PackedScene" uid="uid://r643b4x1846" path="res://rangedenemy.tscn" id="6_h4058"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4rxs6"]
@@ -32,7 +33,7 @@ script = ExtResource("3_fgust")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 position = Vector2(-1, 4)
-scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_05vn8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-3, 4)

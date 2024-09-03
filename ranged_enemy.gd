@@ -30,7 +30,7 @@ func shoot():
 
 func _process(delta):
 	if attack_started:
-		print("not attacking")
+	#	print("not attacking")
 		return
 	else:
 		attack_started = true
@@ -62,4 +62,5 @@ func damage() -> void:
 	set_health_label()
 	set_health_bar()
 
-
+func hit():
+	pass

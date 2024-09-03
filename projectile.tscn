@@ -9,7 +9,6 @@ radius = 233.803
 
 [node name="projectile" type="CharacterBody2D"]
 scale = Vector2(0.05, 0.05)
-collision_layer = 4
 script = ExtResource("1_llftb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,8 +18,8 @@ texture = ExtResource("2_wxf8k")
 shape = SubResource("CircleShape2D_hgvym")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
 script = ExtResource("3_mdhb0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.25772, -1.70726)
 shape = SubResource("CircleShape2D_hgvym")
