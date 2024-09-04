@@ -9,7 +9,7 @@ var projectile_spawn_distance_from_creator = 40
 
 
 @onready var main = get_tree().get_root().get_node("testarea")
-@onready var projectile = load("res://projectile.tscn")
+@onready var projectile = load("res://Enemies/projectile.tscn")
 var attack_started = false;
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D

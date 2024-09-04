@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://brn00stcanrqa"]
+[gd_scene load_steps=5 format=3 uid="uid://bnpnwmd4ur6tl"]
 
-[ext_resource type="Script" path="res://projectile.gd" id="1_llftb"]
+[ext_resource type="Script" path="res://Enemies/projectile.gd" id="1_llftb"]
 [ext_resource type="Texture2D" uid="uid://bmtl41tmmw4sf" path="res://enemyart/fireball.png" id="2_wxf8k"]
-[ext_resource type="Script" path="res://ProjectileDisappearOnCollision.gd" id="3_mdhb0"]
+[ext_resource type="Script" path="res://Enemies/ProjectileDisappearOnCollision.gd" id="3_mdhb0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgvym"]
 radius = 156.549

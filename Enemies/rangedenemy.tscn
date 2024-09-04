@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://r643b4x1846"]
+[gd_scene load_steps=5 format=3 uid="uid://b0xwd783d01nc"]
 
-[ext_resource type="Script" path="res://ranged_enemy.gd" id="1_28cma"]
+[ext_resource type="Script" path="res://Enemies/ranged_enemy.gd" id="1_28cma"]
 [ext_resource type="Texture2D" uid="uid://b7rkakjsutm0k" path="res://enemyart/rocketenemy.png" id="2_dq7m5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ppws3"]

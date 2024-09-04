@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1m0am5xs6jx4"]
+[gd_scene load_steps=9 format=3 uid="uid://d2jgi6sd8e8t7"]
 
 [ext_resource type="Texture2D" uid="uid://dcgcihdxmwlyd" path="res://enemyart/sangface.PNG" id="2_vxgw7"]
 [ext_resource type="Script" path="res://playe_r.gd" id="3_fgust"]
-[ext_resource type="PackedScene" uid="uid://r643b4x1846" path="res://rangedenemy.tscn" id="6_h4058"]
+[ext_resource type="PackedScene" uid="uid://b0xwd783d01nc" path="res://Enemies/rangedenemy.tscn" id="6_h4058"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4rxs6"]
 vertices = PackedVector2Array(470.859, 67.2891, 421.422, 54.0391, 1102.03, 76.6563, 1103.96, 598.078, 889.508, 599.938, 895.258, 598.406, 722.742, 598.406, 733.539, 601.297, 89.4922, 606.906, 69.2266, 42.3438, 356.609, 51.8906, 299.141, 67.2891, 533.711, 130.141, 895.258, 299.594, 809, 276.492, 958.406, 535.258, 659.594, 535.258, 236.289, 130.141, 75.9922, 345.477, 213.289, 216, 236.289, 301.859, 981.508, 449, 958.406, 362.742, 722.742, 299.594, 556.711, 216, 659.594, 362.742, 533.711, 301.859, 636.492, 449, 385, 387.711, 470.859, 364.711, 299.141, 364.711)
