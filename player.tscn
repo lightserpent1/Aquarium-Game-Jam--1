@@ -29,10 +29,11 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_t6r42")
 
 [node name="HealthLabel" type="Label" parent="Player"]
-offset_left = -159.0
-offset_top = -580.0
-offset_right = -89.0
-offset_bottom = -557.0
+visible = false
+offset_left = -203.0
+offset_top = -369.0
+offset_right = -133.0
+offset_bottom = -346.0
 scale = Vector2(5.83557, 7.26227)
 text = "Health: 5
 "
