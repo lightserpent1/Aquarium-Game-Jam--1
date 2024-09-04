@@ -3,9 +3,13 @@ extends CharacterBody2D
 #health system
 const MAX_HEALTH = 5
 var health = MAX_HEALTH
+var projectile_spawn_distance_from_creator = 40
+
+
+
 
 @onready var main = get_tree().get_root().get_node("testarea")
-@onready var projectile = load("res://projectile.tscn")
+@onready var projectile = load("res://Enemies/projectile.tscn")
 var attack_started = false;
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
@@ -22,12 +26,21 @@ func _ready():
 	
 	
 func shoot():
+	#var x_facing = self.transform
+	#var y_facing = self.transform.y
+	#var facing = Vector2()
+	#facing = x_facing + y_facing
+	var projectileSpawnPos = global_position
+	var spawn_vec = Vector2(projectile_spawn_distance_from_creator,0).rotated(rotation)
+	projectileSpawnPos += spawn_vec
+	
 	var instance = projectile.instantiate()
 	instance.dir = rotation
-	instance.spawnPos = global_position
+	instance.spawnPos = projectileSpawnPos
 	instance.spawnRot = global_rotation
 	#main.add_child.call_deferred(instance)
-	self.add_child.call_deferred(instance)
+	instance.get_node("ProjectileArea2D").ownerIs(self)
+	main.add_child.call_deferred(instance)
 
 func _process(delta):
 	if attack_started:
