@@ -3,6 +3,9 @@ extends CharacterBody2D
 #health system
 const MAX_HEALTH = 5
 var health = MAX_HEALTH
+var projectile_spawn_distance_from_creator = 35
+
+
 
 
 @onready var main = get_tree().get_root().get_node("testarea")
@@ -23,10 +26,17 @@ func _ready():
 	
 	
 func shoot():
+	#var x_facing = self.transform
+	#var y_facing = self.transform.y
+	#var facing = Vector2()
+	#facing = x_facing + y_facing
+	var projectileSpawnPos = global_position
+	var spawn_vec = Vector2(projectile_spawn_distance_from_creator,0).rotated(rotation)
+	projectileSpawnPos += spawn_vec
 	
 	var instance = projectile.instantiate()
 	instance.dir = rotation
-	instance.spawnPos = global_position
+	instance.spawnPos = projectileSpawnPos
 	instance.spawnRot = global_rotation
 	#main.add_child.call_deferred(instance)
 	instance.get_node("ProjectileArea2D").ownerIs(self)
@@ -43,7 +53,7 @@ func _process(delta):
 		attack_started = false
 
 func _physics_process(delta: float) -> void:
-	look_at(target_to_chase.position)
+	#look_at(target_to_chase.position)
 	if position.distance_to(target_to_chase.position) > 150:
 		navigation_agent.target_position = target_to_chase.global_position
 		velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
