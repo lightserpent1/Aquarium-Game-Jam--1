@@ -3,7 +3,7 @@ extends CharacterBody2D
 #health system
 const MAX_HEALTH = 5
 var health = MAX_HEALTH
-var projectile_spawn_distance_from_creator = 35
+var projectile_spawn_distance_from_creator = 40
 
 
 
@@ -53,11 +53,11 @@ func _process(delta):
 		attack_started = false
 
 func _physics_process(delta: float) -> void:
-	#look_at(target_to_chase.position)
+	look_at(target_to_chase.position)
 	if position.distance_to(target_to_chase.position) > 150:
 		navigation_agent.target_position = target_to_chase.global_position
 		velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * SPEED
-		#move_and_slide()
+		move_and_slide()
 
 func set_health_label() -> void:
 	$HealthLabel.text = "Health: %s" % health
