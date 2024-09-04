@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2jgi6sd8e8t7"]
 
-[ext_resource type="Texture2D" uid="uid://dcgcihdxmwlyd" path="res://enemyart/sangface.PNG" id="2_vxgw7"]
+[ext_resource type="Texture2D" uid="uid://b3mnl8lkrnlpu" path="res://icon.svg" id="3_e24t2"]
 [ext_resource type="Script" path="res://playe_r.gd" id="3_fgust"]
 [ext_resource type="PackedScene" uid="uid://b0xwd783d01nc" path="res://Enemies/rangedenemy.tscn" id="6_h4058"]
 
@@ -19,8 +19,8 @@ size = Vector2(1172, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vbqx"]
 size = Vector2(18, 667)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l8ml"]
-size = Vector2(143, 150.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmmgf"]
+size = Vector2(128, 127)
 
 [node name="testarea" type="Node2D"]
 
@@ -78,27 +78,6 @@ shape = SubResource("RectangleShape2D_rhxcs")
 position = Vector2(2324, 668)
 shape = SubResource("RectangleShape2D_1vbqx")
 
-[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
-position = Vector2(795, 210)
-scale = Vector2(0.5, 0.5)
-script = ExtResource("3_fgust")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_1l8ml")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(3.99998, -4.00002)
-scale = Vector2(0.228314, 0.179878)
-texture = ExtResource("2_vxgw7")
-
-[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
-position = Vector2(293, -25)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
-position = Vector2(-294, 23)
-shape = SubResource("RectangleShape2D_1l8ml")
-
 [node name="RangedEnemy" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("6_h4058")]
 position = Vector2(365, 529)
 target_to_chase = NodePath("../Player")
@@ -107,5 +86,46 @@ target_to_chase = NodePath("../Player")
 position = Vector2(516, 451)
 rotation = -0.654992
 target_to_chase = NodePath("../Player")
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(853, 197)
+script = ExtResource("3_fgust")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(-2, -4)
+texture = ExtResource("3_e24t2")
+
+[node name="Area2D" type="Area2D" parent="Player" groups=["player"]]
+position = Vector2(293, -25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(-294, 24)
+shape = SubResource("RectangleShape2D_mmmgf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_mmmgf")
+
+[node name="HealthLabel" type="Label" parent="Player"]
+offset_left = -159.0
+offset_top = -580.0
+offset_right = -89.0
+offset_bottom = -557.0
+scale = Vector2(5.83557, 7.26227)
+text = "Health: 5
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthBar" type="ProgressBar" parent="Player"]
+offset_left = -349.0
+offset_top = -150.0
+offset_right = -334.0
+offset_bottom = -122.695
+scale = Vector2(50, 1.886)
+max_value = 5.0
+step = 1.0
+value = 5.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
