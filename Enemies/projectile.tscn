@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnpnwmd4ur6tl"]
 
 [ext_resource type="Script" path="res://Enemies/projectile.gd" id="1_llftb"]
-[ext_resource type="Texture2D" uid="uid://bmtl41tmmw4sf" path="res://enemyart/fireball.png" id="2_wxf8k"]
+[ext_resource type="Texture2D" uid="uid://dcgcihdxmwlyd" path="res://enemyart/sangface.PNG" id="2_8w2mm"]
 [ext_resource type="Script" path="res://Enemies/ProjectileDisappearOnCollision.gd" id="3_mdhb0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgvym"]
@@ -12,7 +12,10 @@ scale = Vector2(0.05, -0.03)
 script = ExtResource("1_llftb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_wxf8k")
+position = Vector2(20, -33.3333)
+rotation = 3.2306
+scale = Vector2(5.59564, 5.92546)
+texture = ExtResource("2_8w2mm")
 
 [node name="ProjectileArea2D" type="Area2D" parent="."]
 script = ExtResource("3_mdhb0")
